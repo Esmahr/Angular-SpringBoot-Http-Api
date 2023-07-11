@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<body><!--Main Content-->
+  <div class="my-5">
+    <div class="mx-auto w-25 " style="max-width:100%;">
+      <h2 class="text-center mb-3">Add User</h2>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <!--first name-->
+        <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="name" class="form-label">First Name</label>
+            <input id="name" formControlName="name" type="text" name="name" class="form-control" placeholder="Name"
+              required>
+          </div>
+        </div>
+
+        <!--last name-->
+        <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="lastname" class="form-label">Last Name</label>
+            <input id="lastname" formControlName="lastname" type="text" name="lastname" class="form-control" placeholder="LastName"
+              required>
+          </div>
+        </div>
+        <!--user name-->
+        <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="username" class="form-label">User Name</label>
+            <input id="username" formControlName="username" type="text" name="username" class="form-control" placeholder="UserName"
+              required>
+          </div>
+        </div>
+
+        <!--Email-->
+        <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" type="email" formControlName="email" name="email" class="form-control" placeholder="email"
+              required>
+          </div>
+        </div>
+
+        <!--password-->
+        <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input id="password" type="text" name="password" formControlName="password" class="form-control" placeholder="Phone Number"
+              required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 form-group" style="text-align: center;">
+            <input [disabled]="!form.valid" class="btn  w-50" type="submit" value="Submit">
+          </div>
+        </div>
+
+        <div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</body>

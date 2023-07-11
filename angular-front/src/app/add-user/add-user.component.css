@@ -1,0 +1,17 @@
+body {
+    min-height: 780px;
+    width: 100%;
+    margin: 0;
+    background-color: #EEEEEE;
+}
+
+.btn {
+    background-color: #3A98B9;
+    color: #EEEEEE;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background-color: #3A98B9;
+    color: #EEEEEE;
+}

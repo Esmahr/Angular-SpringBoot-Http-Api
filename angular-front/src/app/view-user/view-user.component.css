@@ -1,0 +1,24 @@
+body {
+    min-height: 780px;
+    width: 100%;
+    margin: 0;
+    background-color: #EEEEEE;
+}
+
+.table th{
+    background-color: #E8D5C4;
+    color: rgb(87, 99, 112);
+}
+.table th:hover {
+    color: #3A98B9;
+}
+
+button{
+    background-color: #E8D5C4;
+    color: rgb(87, 99, 112);
+}
+
+.btn:hover {
+    background-color: #3A98B9;
+    color: #EEEEEE;
+}

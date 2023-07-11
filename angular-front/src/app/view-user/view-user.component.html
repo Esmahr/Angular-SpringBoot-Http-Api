@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+<body>
+    <!--Main Content-->
+    <div class="mt-5">
+      <div class="container">
+        <!--Add User Button-->
+        <div class="my-3"style="text-align: right;">
+          <a href="/add"><button type="button" class="btn rounded-pill"><b>Add User</b></button></a>
+        </div>
+        <table class="table ">
+          <thead>
+            <tr>
+              <th style="border-top-left-radius: 5rem;border-bottom-left-radius: 5rem; padding-left: 1.5rem;" scope="col">ID</th>
+              <th scope="col">{{name}}</th>
+              <th scope="col">{{surname}}</th>
+              <th scope="col">{{username}}</th>
+              <th scope="col">{{mail}}</th>
+              <th scope="col">{{password}}</th>
+              <th style="border-bottom-right-radius:5rem;border-top-right-radius: 5rem;" scope="col">Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{user.id}}</td>
+              <td>{{user.name}}</td>
+              <td>{{user.lastname}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.password}}</td>
+              <td>
+                <div class="d-inline mx-2">
+                  <button class="btn btn-warning" (click)="updateUser(user.id)" type="button">Update</button>
+                </div>
+                <div class="d-inline">
+                  <button class="btn btn-danger" (click)="deleteUser(user.id)" type="button">Delete</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
