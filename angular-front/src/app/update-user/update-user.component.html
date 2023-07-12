@@ -6,11 +6,35 @@
         <h2 class="text-center mb-3">Update User</h2>
         <form  [formGroup]="form" (ngSubmit)="submit()" >
 
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input id="firstName"  formControlName="firstName" type="firstName" name="firstNamel" class="form-control" placeholder="firstName" required>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="lastName" class="form-label">lastName</label>
+              <input id="lastName"  formControlName="lastName" type="lastName" name="lastName" class="form-control" placeholder="lastName" required>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="username" class="form-label">username</label>
+              <input id="username"  formControlName="username" type="username" name="username" class="form-control" placeholder="username" required>
+            </div>
+          </div>
+
+
           <!--Email-->
           <div class="row">
             <div class="col-md-12 form-group mb-3">
               <label for="email" class="form-label">Email</label>
-              <input id="email"  formControlName="email" type="email" name="email" class="form-control" placeholder="email" required>
+              <input id="email"  formControlName="mail" type="email" name="email" class="form-control" placeholder="email" required>
             </div>
           </div>
 
@@ -18,17 +42,8 @@
           <!--PNo-->
           <div class="row">
             <div class="col-md-12 form-group mb-3">
-              <label for="pNo" class="form-label">Phone Number</label>
-              <input id="pNo" type="text" formControlName="pNo" name="pNo"class="form-control" placeholder="Phone Number" required>
-            </div>
-          </div>
-         
-            
-          <!--PNo-->
-          <div class="row">
-            <div class="col-md-12 form-group mb-3">
-              <label for="Address" class="form-label">Address</label>
-              <textarea id="Address" formControlName="address" type="text" name="address"  class="form-control" placeholder="New Delhi, India" rows="3" required></textarea>
+              <label for="pNo" class="form-label">password</label>
+              <input id="pNo" type="text" formControlName="password" name="pNo"class="form-control" placeholder="password" required>
             </div>
           </div>
          

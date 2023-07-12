@@ -16,18 +16,16 @@
               <th scope="col">{{surname}}</th>
               <th scope="col">{{username}}</th>
               <th scope="col">{{mail}}</th>
-              <th scope="col">{{password}}</th>
               <th style="border-bottom-right-radius:5rem;border-top-right-radius: 5rem;" scope="col">Options</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let user of users">
               <td>{{user.id}}</td>
-              <td>{{user.name}}</td>
-              <td>{{user.lastname}}</td>
+              <td>{{user.firstName}}</td>
+              <td>{{user.lastName}}</td>
               <td>{{user.username}}</td>
-              <td>{{user.email}}</td>
-              <td>{{user.password}}</td>
+              <td>{{user.mail}}</td>
               <td>
                 <div class="d-inline mx-2">
                   <button class="btn btn-warning" (click)="updateUser(user.id)" type="button">Update</button>

@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <body><!--Main Content-->
   <div class="my-5">
-    <div class="mx-auto w-25 " style="max-width:100%;">
+    <div class="mx-auto w-25" style="max-width:100%;">
       <h2 class="text-center mb-3">Add User</h2>
       <form [formGroup]="form" (ngSubmit)="submit()">
         <!--first name-->
@@ -17,7 +17,7 @@
         <div class="row">
           <div class="col-md-12 form-group mb-3">
             <label for="lastname" class="form-label">Last Name</label>
-            <input id="lastname" formControlName="lastname" type="text" name="lastname" class="form-control" placeholder="LastName"
+            <input id="lastname" formControlName="lastName" type="text" name="lastname" class="form-control" placeholder="LastName"
               required>
           </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="row">
           <div class="col-md-12 form-group mb-3">
             <label for="email" class="form-label">Email</label>
-            <input id="email" type="email" formControlName="email" name="email" class="form-control" placeholder="email"
+            <input id="email" type="email" formControlName="mail" name="email" class="form-control" placeholder="email"
               required>
           </div>
         </div>

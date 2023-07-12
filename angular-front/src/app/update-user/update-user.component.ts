@@ -15,27 +15,24 @@ export class UpdateUserComponent implements OnInit {
   data: any
 
 
-  constructor(private service: AppService, private route: ActivatedRoute, private router : Router) { }
+  constructor(private service: AppService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    let id = this.route.snapshot.params['id'];
-    this.service.getUserById(id).subscribe(data => {
-      this.user = data
-      console.log(this.user)
-    })
   }
 
   form = new FormGroup({
-    email: new FormControl('', [Validators.required]),
-    pNo: new FormControl('', [Validators.required]),
-    address: new FormControl('', [Validators.required])
+    firstName: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required]),
+    username: new FormControl('', [Validators.required]),
+    mail: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
   })
 
-  submit(){
+  submit() {
     this.data = this.form.value
     console.log(this.data)
-    
-    this.service.updateUser(this.user?.id, this.data).subscribe(data => {
+
+    this.service.updateUser(this.data).subscribe(data => {
       console.log(data)
     })
 
