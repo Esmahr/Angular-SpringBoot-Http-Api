@@ -39,7 +39,7 @@ public class UserController {
         return new ResponseEntity<>(userService.updateUser(userRequest), HttpStatus.OK);
     }
 
-    @DeleteMapping(path = "/")
+    @DeleteMapping(path = "")
     public void deleteUser(@RequestParam String username) {
         userService.deleteUser(username);
     }
