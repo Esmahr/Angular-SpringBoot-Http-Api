@@ -3,8 +3,6 @@ package rasitesdmr.com.userservice.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.method.HandlerTypePredicate;
-import rasitesdmr.com.userservice.model.User;
 import rasitesdmr.com.userservice.model.dto.request.UserRequest;
 import rasitesdmr.com.userservice.model.dto.response.UserResponse;
 import rasitesdmr.com.userservice.service.UserService;
@@ -13,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/user")
+@CrossOrigin(maxAge = 3600)
 public class UserController {
     private final UserService userService;
 
