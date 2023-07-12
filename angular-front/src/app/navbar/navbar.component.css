@@ -1,0 +1,29 @@
+a {
+    color: #EEEEEE;
+}
+
+.nav-item {
+    font-size: 20px;
+    color: #EEEEEE;
+}
+.nav-item:hover {
+    transform: scale(1.2);
+    color: #E8D5C4;
+}
+
+nav {
+    border-radius: 5rem;
+    background-color: #3A98B9;
+}
+
+svg {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+svg:hover {
+    transform: scale(1.4);
+    color: #E8D5C4;
+}
