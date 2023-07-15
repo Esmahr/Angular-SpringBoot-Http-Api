@@ -10,23 +10,25 @@ public interface UserService {
 
     UserResponse createUser(UserRequest userRequest);
 
-    UserResponse findUserResponseByUserName(String username);
+    UserResponse getUserResponseByUserName(String username);
 
-    User findUserByUserName(String username);
+    User getUserByUserName(String username);
 
     boolean isCheckUser(String username);
 
-    List<User> findAllUsers();
+    List<User> getAllUsers();
 
-    List<UserResponse> findAllUserResponses();
+    List<UserResponse> getAllUserResponses();
 
-    User findUserById(Long id);
+    User getUserById(Long id);
 
-    UserResponse updateUser(UserRequest userRequest);
+    UserResponse updateUser(Long id ,UserRequest userRequest);
 
     void updateUserFields(User user,UserRequest userRequest);
 
-    void deleteUser(String username);
+    void deleteUser(Long id);
+
+
 
 
 }

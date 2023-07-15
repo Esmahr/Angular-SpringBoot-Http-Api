@@ -35,13 +35,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResponse findUserResponseByUserName(String username) {
-        User user = findUserByUserName(username);
+    public UserResponse getUserResponseByUserName(String username) {
+        User user = getUserByUserName(username);
         return new UserResponse(user.getId(), user.getFirstName(), user.getLastName(), user.getUsername(), user.getMail());
     }
 
     @Override
-    public User findUserByUserName(String username) {
+    public User getUserByUserName(String username) {
         return userRepository.findByUsername(username);
     }
 
@@ -51,13 +51,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findAllUsers() {
+    public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
     @Override
-    public List<UserResponse> findAllUserResponses() {
-        List<User> users = findAllUsers();
+    public List<UserResponse> getAllUserResponses() {
+        List<User> users = getAllUsers();
         List<UserResponse> userResponses = new ArrayList<>();
         for (User user : users) {
             UserResponse userResponse = new UserResponse(user.getId(), user.getFirstName(), user.getLastName(), user.getUsername(), user.getMail());
@@ -67,13 +67,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findUserById(Long id) {
+    public User getUserById(Long id) {
         return userRepository.findById(id).orElseThrow(() -> new NotAvailableException("User Not Found"));
     }
 
     @Override
-    public UserResponse updateUser(UserRequest userRequest) {
-        User currentUser = findUserByUserName(userRequest.getUsername());
+    public UserResponse updateUser(Long id ,UserRequest userRequest) {
+        User currentUser = getUserById(id);
         updateUserFields(currentUser, userRequest);
         userRepository.save(currentUser);
         return new UserResponse(currentUser.getId(), currentUser.getFirstName(), currentUser.getLastName(), currentUser.getUsername(), currentUser.getMail());
@@ -89,8 +89,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void deleteUser(String username) {
-        User user = findUserByUserName(username);
+    public void deleteUser(Long id) {
+        User user = getUserById(id);
         userRepository.delete(user);
     }
 }
