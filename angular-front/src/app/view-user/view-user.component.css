@@ -1,26 +1,41 @@
 body {
-    min-height: 780px;
+    min-height: 570px;
     width: 100%;
     margin: 0;
     background-color: #EEEEEE;
 }
 
-.table th{
+.table th {
     background-color: #E8D5C4;
 }
+
 .table th:hover {
     color: #3A98B9;
 }
 
-.table td{
+.table td {
     background-color: #EEEEEE;
 }
 
-button{
+button {
     background-color: #E8D5C4;
 }
 
 .btn:hover {
     background-color: #3A98B9;
     color: #EEEEEE;
+}
+
+.form-control {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 20%;
+    height: 50%;
+}
+
+.d-flex .search {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 50%;
+   
 }

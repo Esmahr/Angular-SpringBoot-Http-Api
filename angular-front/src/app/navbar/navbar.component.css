@@ -7,8 +7,7 @@ a {
     color: #EEEEEE;
 }
 .nav-item:hover {
-    transform: scale(1.2);
-    color: #E8D5C4;
+    transform: scale(1.1);
 }
 
 nav {
@@ -25,5 +24,4 @@ svg {
 
 svg:hover {
     transform: scale(1.4);
-    color: #E8D5C4;
 }

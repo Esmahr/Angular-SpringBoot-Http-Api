@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-import {ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +9,8 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
+import { FooterComponent } from './footer/footer.component';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,15 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
     UpdateUserComponent,
     ViewUserComponent,
     NavbarComponent,
-    DeleteUserComponent
+    DeleteUserComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

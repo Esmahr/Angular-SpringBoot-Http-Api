@@ -1,13 +1,30 @@
-<app-navbar></app-navbar>
-
 <body>
   <!--Main Content-->
-  <div class="mt-5">
+  <div class="mt-5 pb-5">
     <div class="container">
-      <!--Add User Button-->
-      <div class="my-3" style="text-align: right;">
-        <a href="/add"><button type="button" class="btn rounded-pill"><b>Add User</b></button></a>
+      <div class="row d-flex">
+
+        <form class="d-flex" role="search">
+
+          <!--Search Button-->
+          <input class="form-control me-1 rounded-start-pill" (change)="getUserByUserName(username)" type="text" placeholder="User Search" aria-label="Search"
+            aria-describedby="button-addon2">
+
+            <button class="btn rounded-end-pill search" type="submit" id="button-addon2"><svg
+              xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search"
+              viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg></button>
+          
+
+          <!--Add User Button-->
+          <div class="my-3" style="margin-left: 55rem;">
+            <a href="/add"><button type="button" class="btn rounded-pill"><b>Add User</b></button></a>
+          </div>
+        </form>
       </div>
+
       <table class="table ">
         <thead>
           <tr>
@@ -49,6 +66,8 @@
           </tr>
         </tbody>
       </table>
+      -------
+
     </div>
   </div>
 </body>

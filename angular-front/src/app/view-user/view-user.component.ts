@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 
 @Component({
@@ -16,11 +18,11 @@ export class ViewUserComponent implements OnInit {
   password = 'Password';
 
   users: any[] | undefined
-  url: string = "http://193.164.6.74:8088/user";
+  
 
   constructor(private service: AppService, private router: Router) {
 
-  }
+   }
 
   ngOnInit(): void {
     this.service.getUsers().subscribe(data => {
@@ -32,15 +34,16 @@ export class ViewUserComponent implements OnInit {
     this.service.deleteUser(id).subscribe(data => {
       this.users = this.users?.filter(user => user.id !== id);
     })
-
-    setTimeout(() => {
-      window.location.reload();
-    }, 100);
-
   }
 
   updateUser(id: number) {
     this.router.navigate(['update', id]);
   }
 
+  getUserByUserName(username: string) {
+    this.service.getUserByUserName(username).subscribe(data => {
+      console.log(data); 
+    });
+  }
+  
 }

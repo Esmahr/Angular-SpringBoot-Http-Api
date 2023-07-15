@@ -28,8 +28,16 @@ export class AddUserComponent implements OnInit {
     console.log(this.data)
 
     this.service.adduser(this.data).subscribe(data => {
-      console.log(data)
+      console.log(data);
     })
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 1);
+    
     this.router.navigate(['/']);
   }
 }
+
+
+
