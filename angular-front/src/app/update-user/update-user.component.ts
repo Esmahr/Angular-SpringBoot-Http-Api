@@ -28,14 +28,12 @@ export class UpdateUserComponent implements OnInit {
     password: new FormControl('', [Validators.required]),
   })
 
-  submit() {
-    this.data = this.form.value
-    console.log(this.data)
-
-    this.service.updateUser(this.data).subscribe(data => {
+  submit() { 
+    this.data = this.form.value;
+    const id = this.route.snapshot.params['id'];
+    this.service.updateUser(id, this.data).subscribe(data => {
       console.log(data)
     })
-
     this.router.navigate(['/']);
   }
 

@@ -7,6 +7,9 @@ import { User } from './User';
   providedIn: 'root'
 })
 export class AppService {
+  getUser(userId: string | null) {
+    throw new Error('Method not implemented.');
+  }
 
   private url = "http://193.164.6.74:8088/user";
 
@@ -28,9 +31,9 @@ export class AppService {
   }
 
   // Update User - Update
-  updateUser(id: User): Observable<any> {
-    return this.http.put<User>(`${this.url}`, id)
-  }
+  updateUser(id: number, body: User): Observable<User> { 
+    return this.http.put<User>(`${this.url}/${id}`, body)
+   }
 
   // Delete User - Delete
   deleteUser(id: number): Observable<any> {
