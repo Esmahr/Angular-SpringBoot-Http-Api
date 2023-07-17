@@ -23,8 +23,8 @@ export class AppService {
   }
 
   // Get User by username - Read
-  getUserByUserName(username: string): Observable<User> {
-    return this.http.get<User>(`${this.url}/${username}`)
+  getUserByUserName(username: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/${username}`)
   }
 
   // Update User - Update

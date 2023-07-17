@@ -18,21 +18,24 @@ export class ViewUserComponent implements OnInit {
   password = 'Password';
 
   users: any[] | undefined
-  
+  filteredUsers: any[] | undefined;
 
   constructor(private service: AppService, private router: Router) {
 
-   }
+  }
 
   ngOnInit(): void {
     this.service.getUsers().subscribe(data => {
       this.users = data;
-    })
+      this.filteredUsers = this.users; // Tüm kullanıcıları filtrelenmiş kullanıcılar listesine ata
+    });
   }
+  
 
   deleteUser(id: number) {
     this.service.deleteUser(id).subscribe(data => {
       this.users = this.users?.filter(user => user.id !== id);
+      location.reload(); // Sayfayı yenile
     })
   }
 
@@ -41,9 +44,11 @@ export class ViewUserComponent implements OnInit {
   }
 
   getUserByUserName(username: string) {
-    this.service.getUserByUserName(username).subscribe(data => {
-      console.log(data); 
-    });
+    if (username) {
+      this.filteredUsers = this.users?.filter(user => user.username.toLowerCase().includes(username.toLowerCase()));
+    } else {
+      this.filteredUsers = this.users;
+    }
   }
-  
+
 }
