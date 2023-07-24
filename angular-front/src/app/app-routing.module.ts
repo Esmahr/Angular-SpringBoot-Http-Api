@@ -5,7 +5,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 
 const routes: Routes = [
-  { path: '', component: ViewUserComponent, title: 'Home Page' },
+  { path: '', component: ViewUserComponent, title: 'Home' },
   { path: 'add', component: AddUserComponent, title: 'Add Page' },
   { path: 'update/:id', component: UpdateUserComponent, title: 'Update Page' },
 ];

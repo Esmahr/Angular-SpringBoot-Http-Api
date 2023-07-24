@@ -1,62 +1,61 @@
 <body><!--Main Content-->
-    <div class="my-5">
-      <div class="mx-auto w-25 " style="max-width:100%;">
-        <h2 class="text-center mb-3">Update User</h2>
-        <form  [formGroup]="form" (ngSubmit)="submit()">
-
-          <div class="row">
-            <div class="col-md-12 form-group mb-3">
-              <label for="firstName" class="form-label">First Name</label>
-              <input id="firstName"  formControlName="firstName" type="firstName" name="firstNamel" class="form-control" placeholder="First name" required>
-            </div>
+  <div class="my-5">
+    <div class="mx-auto w-25 " style="max-width:100%;">
+      <h2 class="text-center mb-3">Update User</h2>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <!--name-->
+        <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input id="firstName" formControlName="firstName" type="text" name="firstName" class="form-control"
+              placeholder="First name" [value]="user?.firstName" required>
           </div>
-
-
-          <div class="row">
-            <div class="col-md-12 form-group mb-3">
-              <label for="lastName" class="form-label">Surname</label>
-              <input id="lastName"  formControlName="lastName" type="lastName" name="lastName" class="form-control" placeholder="Last name" required>
-            </div>
+        </div>
+        <!--surname-->
+        <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="lastName" class="form-label">Surname</label>
+            <input id="lastName" formControlName="lastName" type="text" name="lastName" class="form-control"
+              placeholder="Last name" [value]="user?.lastName" required>
           </div>
-
-
-          <div class="row">
-            <div class="col-md-12 form-group mb-3">
-              <label for="username" class="form-label">Username</label>
-              <input id="username"  formControlName="username" type="username" name="username" class="form-control" placeholder="Username" required>
-            </div>
+        </div>
+        <!--username-->
+        <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input id="username" formControlName="username" type="text" name="username" class="form-control"
+              placeholder="Username" [value]="user?.username" required>
           </div>
-
-
-          <!--Email-->
-          <div class="row">
-            <div class="col-md-12 form-group mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input id="email"  formControlName="mail" type="email" name="email" class="form-control" placeholder="Email" required>
-            </div>
+        </div>
+        <!--Email-->
+        <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" formControlName="mail" type="text" name="email" class="form-control" placeholder="Email"
+            [value]="user?.mail" required>
           </div>
+        </div>
+        <!--Password-->
+        <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input id="password" type="text" formControlName="password" name="password" class="form-control"
+              placeholder="Password" [value]="user?.password" required>
+          </div>
+        </div>
 
-          
-          <!--Password-->
-          <div class="row">
-            <div class="col-md-12 form-group mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input id="password" type="text" formControlName="password" name="password"class="form-control" placeholder="Password" required>
-            </div>
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <button [disabled]="!form.valid" class="btn btn-primary w-100" type="submit"
+              value="Submit">Güncelle</button>
           </div>
-         
-          <div class="row">
-            <div class="col-md-12 form-group">
-              <button [disabled]="!form.valid" class="btn btn-primary w-100" type="submit" value="Submit">Button</button>
-            </div>
-          </div>
+        </div>
 
-          <div>
-            
-          </div>
-        </form>
-  
-      </div>
+        <div>
+
+        </div>
+      </form>
+
     </div>
-    
+  </div>
 </body>

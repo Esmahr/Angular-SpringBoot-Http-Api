@@ -30,10 +30,15 @@ export class AppService {
     return this.http.get<any>(`${this.url}/${username}`)
   }
 
+  //Get user by id - read
+  getUserById(id: number): Observable<any> {
+    const userUrl = `${this.url}/id/${id}`;
+    return this.http.get<any>(userUrl);
+  }
   // Update User - Update
-  updateUser(id: number, body: User): Observable<User> { 
+  updateUser(id: number, body: User): Observable<User> {
     return this.http.put<User>(`${this.url}/${id}`, body)
-   }
+  }
 
   // Delete User - Delete
   deleteUser(id: number): Observable<any> {

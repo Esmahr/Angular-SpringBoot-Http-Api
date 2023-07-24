@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 
 @Component({
