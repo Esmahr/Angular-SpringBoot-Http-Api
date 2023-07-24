@@ -3,6 +3,7 @@ package rasitesdmr.com.userservice.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import rasitesdmr.com.userservice.model.User;
 import rasitesdmr.com.userservice.model.dto.request.UserRequest;
 import rasitesdmr.com.userservice.model.dto.response.UserResponse;
 import rasitesdmr.com.userservice.service.UserService;
@@ -35,14 +36,17 @@ public class UserController {
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<UserResponse> updateUser(@PathVariable(name = "id")Long id,@RequestBody UserRequest userRequest) {
-        return new ResponseEntity<>(userService.updateUser(id,userRequest), HttpStatus.OK);
+    public ResponseEntity<UserResponse> updateUser(@PathVariable(name = "id") Long id, @RequestBody UserRequest userRequest) {
+        return new ResponseEntity<>(userService.updateUser(id, userRequest), HttpStatus.OK);
     }
 
     @DeleteMapping(path = "/{id}")
-    public void deleteUser(@PathVariable(name = "id") Long id ) {
+    public void deleteUser(@PathVariable(name = "id") Long id) {
         userService.deleteUser(id);
     }
 
-
+    @GetMapping(path = "id/{userId}")
+    public ResponseEntity<User> getUserById(@PathVariable(name = "userId") Long userId) {
+        return new ResponseEntity<>(userService.getUserById(userId),HttpStatus.OK);
+    }
 }
