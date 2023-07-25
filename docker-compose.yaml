@@ -27,7 +27,7 @@ services:
       - comment
 
   user-service:
-    image: rasitesdmr1486/res-user-service:v1.4
+    image: rasitesdmr1486/res-user-service:v1.5
     restart: always
     container_name: user-service
     depends_on:
@@ -36,18 +36,12 @@ services:
     ports:
       - "8088:8088"
     environment:
-      - PROFILE_ACTIVE
-      - POSTGRESQL_HIBERNATE_DDL_AUTO
-      - POSTGRESQL_HOST
-      - POSTGRESQL_PORT
-      - POSTGRES_DB
-      - POSTGRES_USER
-      - POSTGRES_PASSWORD
+        POSTGRESQL_HOST : user-database
     networks:
       - comment
 
   angular-front:
-    image: rasitesdmr1486/res-angular-front:v1.6
+    image: rasitesdmr1486/res-angular-front:v2.5
     restart: always
     container_name: angular-front
     ports:
