@@ -121,6 +121,27 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "getUserById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/user/id/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"user",
+						"id",
+						"1"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
