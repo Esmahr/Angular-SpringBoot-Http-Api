@@ -26,11 +26,13 @@ export class UpdateUserComponent implements OnInit {
     this.service.getUserById(id).subscribe(
       (data) => {
         this.user = data;
-        firstName: this.user?.firstName;
-        lastName: this.user?.lastName;
-        username: this.user?.username;
-        mail: this.user?.mail;
-        password: this.user?.password;
+        this.form.setValue({
+          firstName: this.user?.firstName ?? null,
+          lastName: this.user?.lastName ?? null,
+          username: this.user?.username ?? null,
+          mail: this.user?.mail ?? null,
+          password: this.user?.password ?? null
+        });
       },
       (error) => {
         console.error('Kullanıcı alınırken bir hata oluştu:', error);
@@ -39,11 +41,11 @@ export class UpdateUserComponent implements OnInit {
   }
 
   form = new FormGroup({
-    firstName: new FormControl('', [Validators.required]),
-    lastName: new FormControl('', [Validators.required]),
-    username: new FormControl('', [Validators.required]),
-    mail: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required])
+    firstName: new FormControl(),
+    lastName: new FormControl(),
+    username: new FormControl(),
+    mail: new FormControl(),
+    password: new FormControl()
   });
 
   submit() {
