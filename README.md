@@ -9,12 +9,12 @@
 <img src = "https://github.com/Esmahr/Angular-SpringBoot-Http-Api/blob/main/images/ft3.png">
 </p>
  
-## 📌 User Add
+## 📌 Add User
 <p align ="center">
 <img src = "https://github.com/Esmahr/Angular-SpringBoot-Http-Api/blob/main/images/ft2.png">
 </p>
 
-## 📌 User Update
+## 📌 Update User
 <p align ="center">
 <img src = "https://github.com/Esmahr/Angular-SpringBoot-Http-Api/blob/main/images/ft4.png">
 </p>
